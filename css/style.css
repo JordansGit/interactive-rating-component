@@ -1,10 +1,11 @@
 .attribution { font-size: 11px; text-align: center; position: absolute; bottom: 0;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
-* {
+* { /* using the star changes font for all elements, whereas body does not include form elements and buttons */ 
   font-family: 'Overpass', sans-serif; 
 }
 
+/* GENERAL STYLING */ 
 body {
   width: 100vw;
   height: 100vh;
@@ -13,18 +14,37 @@ body {
   align-items: center;
   font-size: 15px;
   color: hsl(0, 0%, 100%); 
-  background: hsl(216, 12%, 8%); /* very dark blue */ 
+  background: hsl(216, 12%, 8%); 
   margin: 0;
   padding: 0;
 }
 
 .container {
-  display: flex;
-  width: 350px; 
-  height: 350px;
-  flex-direction: column;
-  background: hsl(213, 19%, 15%); /* changed lightness on this from default */  
+  width: 410px; 
+  height: 410px;   
+  background-image: linear-gradient(to top, hsl(215,27%,12%), hsl(215,22%,16%)); /* changed this from default as colour is different colour pick says it is prev would be: background: hsl(215, 22%, 14%);*/
   border-radius: 25px;
+} 
+
+h1 {
+  margin: 8px 0 0 0;
+  font-size: 28px;
+  
+}
+
+p {
+  color: hsl(216, 12%, 54%);
+  margin: -15px 0 0 0;
+  line-height: 1.6;
+}
+
+
+/* STATE 1 */ 
+.default-state {
+  height: 350px;
+  width: 350px; 
+  display: flex; /* display flex on default*/ 
+  flex-direction: column;
   padding: 30px;
   justify-content: space-between;
 }
@@ -64,18 +84,6 @@ button.circle:hover {
   color: hsl(0, 0%, 100%);
 }
 
-h1 {
-  margin: 8px 0 0 0;
-  font-size: 28px;
-  
-}
-
-p {
-  color: hsl(216, 12%, 54%);
-  margin: -15px 0 0 0;
-  line-height: 1.6;
-}
-
 #submit {
   background: hsl(25, 97%, 53%); 
   color: hsl(0, 0%, 100%);
@@ -94,9 +102,37 @@ p {
   cursor: pointer;
 }
 
-.hidden {
+/* STATE 2 */ 
+.submitted-state { /* maybe there's some DRY i can do here */ 
   display: none;
+  flex-direction: column; 
+  padding: 45px 35px;
+  justify-content: space-between;
+  height: 320px;
+  width: 340px;
+  align-items: center;
+  text-align: center;
 }
+
+.submitted-state img {
+  width: 160px;
+  height: auto;
+  margin-right: 10px;
+}
+
+#selected-rating {
+  background: hsl(213, 19%, 18%); 
+  border-radius: 25px;
+  padding: 5px 18px;
+  margin-top: 5px;
+}
+
+#selected-rating p {
+  color: hsl(25, 97%, 53%);
+  margin: 3px 0 0 0;
+  line-height: inherit;
+}
+
 
 /* 
 once submitted is clicked, change to submitted state. 
