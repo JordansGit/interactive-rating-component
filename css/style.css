@@ -134,15 +134,10 @@ button.circle:hover {
 }
 
 
-/* 
-once submitted is clicked, change to submitted state. 
-  i think i need to create a div inside container, 1 called default, 1 called submitted
-    put all the elements shows inside default. put all the elements in hidden div into submitted. 
-
-  then with js, have submitted button display none by default, and once clicked, display flex + the default is changed to display none;
-
-do mobile and fully responsive designs 
+/* to do: 
 readme file + screenshots 
+
+not doing rwd for this project. 
 */ 
 
 
